@@ -1,0 +1,126 @@
+<!doctype html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>双重动量轮动 v1 · 2026-08-03</title>
+<style>
+body{font-family:system-ui,'Microsoft YaHei',sans-serif;max-width:880px;
+margin:0 auto;padding:16px 14px 48px;color:#1a1a1a;line-height:1.6}
+a{color:#1f6feb}
+.banner{background:#eef4ff;border:1px solid #c9d9f5;border-radius:8px;
+padding:10px 14px;font-size:13px;color:#31527d;margin:12px 0}
+.banner.real{background:#fff6e5;border-color:#f3d9a4;color:#8a5a00}
+.kpi{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.kpi div{flex:1;min-width:130px;background:#f7f8fa;border:1px solid #e6e8eb;
+border-radius:8px;padding:10px 12px}
+.kpi b{display:block;font-size:20px;margin-top:2px}
+.pos{color:#c0392b} .neg{color:#1e8449}
+.tbl{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
+.tbl td,.tbl th{border-bottom:1px solid #ececec;padding:6px 8px;text-align:right}
+.tbl th{background:#f7f8fa;font-weight:600}
+.tbl td:first-child,.tbl th:first-child,.tbl td:nth-child(2),.tbl th:nth-child(2)
+{text-align:left}
+h1{font-size:22px;margin:8px 0} h2{font-size:16px;margin:26px 0 6px;
+border-left:3px solid #1f6feb;padding-left:8px}
+.alert{background:#c0392b;color:#fff;padding:10px 14px;border-radius:6px;font-weight:600}
+.ok{color:#1e8449} .bad{color:#c0392b;font-weight:600}
+.muted{color:#8b8b8b;font-size:12px}
+.card{display:block;border:1px solid #e6e8eb;border-radius:10px;padding:14px 16px;
+margin:10px 0;text-decoration:none;color:inherit}
+.card:hover{border-color:#1f6feb;background:#fbfcff}
+</style>
+<p class="muted"><a href="../">← 策略总览</a></p>
+<h1>双重动量轮动 v1</h1>
+<p class="muted">信号日 2026-08-03 ｜ 执行日 2026-08-04</p>
+<div class="banner"><b>模拟盘（SIM）</b>：不涉及真实资金，成交由系统按既定限价规则以真实行情模拟推演 · 个人研究 · 个人研究项目的自动化输出，<b>不构成任何投资建议</b>；所示为策略信号与模拟结果，据此操作风险自负。</div>
+
+<div class="kpi">
+  <div>累计收益<b><span class="">+0.00%</span></b></div>
+  <div>当前回撤<b><span class="">+0.0%</span></b></div>
+  <div>持仓数<b>5</b></div>
+  <div>运行天数<b>1</b></div>
+</div>
+
+<h2>净值走势（起点 = 100）</h2>
+<p class="muted">运行不足两个交易日，曲线待累计。</p>
+<p class="muted">一致性检验：运行日数不足，待累计。</p>
+<h2>次日交易指令</h2>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>代码</th>
+      <th>名称</th>
+      <th>方向</th>
+      <th>目标权重%</th>
+      <th>限价</th>
+      <th>信号理由</th>
+      <th>提示</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>588170</td>
+      <td>科创半导体ETF华夏</td>
+      <td>SELL</td>
+      <td>0.0</td>
+      <td>0.812</td>
+      <td>score -1.02% &lt;= 0 exit</td>
+      <td>当日涨跌 -9.9% 接近涨跌停，成交概率低</td>
+    </tr>
+    <tr>
+      <td>515300</td>
+      <td>300红利低波ETF嘉实</td>
+      <td>BUY</td>
+      <td>20.0</td>
+      <td>1.363</td>
+      <td>rank 4 score +5.34% buy</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p class="muted">指令于收盘后生成、次日开盘前挂单，<b>发布时间早于执行</b>——
+事前公开、事后可验。份数与金额不公开。</p>
+<p>继续持有：510720, 512800, 513190, 513350</p>
+<h2>当前持仓</h2>
+<table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>代码</th>
+      <th>名称</th>
+      <th>权重%</th>
+      <th>浮动盈亏%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>510720</td>
+      <td>红利国企ETF国泰</td>
+      <td>19.7</td>
+      <td>-0.64%</td>
+    </tr>
+    <tr>
+      <td>512800</td>
+      <td>银行ETF华宝</td>
+      <td>19.7</td>
+      <td>+0.42%</td>
+    </tr>
+    <tr>
+      <td>513190</td>
+      <td>港股通金融ETF华夏</td>
+      <td>19.7</td>
+      <td>-0.88%</td>
+    </tr>
+    <tr>
+      <td>513350</td>
+      <td>标普油气ETF富国</td>
+      <td>19.8</td>
+      <td>+0.59%</td>
+    </tr>
+    <tr>
+      <td>588170</td>
+      <td>科创半导体ETF华夏</td>
+      <td>17.9</td>
+      <td>-6.91%</td>
+    </tr>
+  </tbody>
+</table>
+<h2>历史记录</h2><table class='tbl'><tr><th>日期</th><th>累计</th><th>当日</th><th>回撤</th><th>当日操作</th></tr><tr><td><a href="archive/2026-08-03.html">2026-08-03</a></td><td><span class="">+0.00%</span></td><td><span class="">+0.00%</span></td><td><span class="">+0.0%</span></td><td style='text-align:left'>卖588170 买515300</td></tr></table>
+<p class="muted">由 AutoTrade 自动生成 · 每交易日 19:05 更新 · 个人研究项目的自动化输出，<b>不构成任何投资建议</b>；所示为策略信号与模拟结果，据此操作风险自负。</p>
