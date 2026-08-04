@@ -13,11 +13,25 @@ padding:10px 14px;font-size:13px;color:#31527d;margin:12px 0}
 border-radius:8px;padding:10px 12px}
 .kpi b{display:block;font-size:20px;margin-top:2px}
 .pos{color:#c0392b} .neg{color:#1e8449}
+/* 表格对齐：默认左对齐，数字列按表显式右对齐（表头与单元格成对设置，
+   避免出现表头右、内容左的错位） */
 .tbl{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
-.tbl td,.tbl th{border-bottom:1px solid #ececec;padding:6px 8px;text-align:right}
+.tbl td,.tbl th{border-bottom:1px solid #ececec;padding:6px 8px;text-align:left;
+white-space:nowrap}
 .tbl th{background:#f7f8fa;font-weight:600}
-.tbl td:first-child,.tbl th:first-child,.tbl td:nth-child(2),.tbl th:nth-child(2)
-{text-align:left}
+.tbl td:last-child{white-space:normal}
+/* 指令表：目标权重% / 限价 */
+.otbl td:nth-child(4),.otbl th:nth-child(4),
+.otbl td:nth-child(5),.otbl th:nth-child(5){text-align:right}
+/* 持仓表：权重% / 浮动盈亏% */
+.ptbl td:nth-child(3),.ptbl th:nth-child(3),
+.ptbl td:nth-child(4),.ptbl th:nth-child(4){text-align:right}
+/* 历史表：累计 / 当日 / 回撤 */
+.htbl td:nth-child(2),.htbl th:nth-child(2),
+.htbl td:nth-child(3),.htbl th:nth-child(3),
+.htbl td:nth-child(4),.htbl th:nth-child(4){text-align:right}
+/* 回测页数值表：首列为标签，其余全为数字 */
+.ntbl td:not(:first-child),.ntbl th:not(:first-child){text-align:right}
 h1{font-size:22px;margin:8px 0} h2{font-size:16px;margin:26px 0 6px;
 border-left:3px solid #1f6feb;padding-left:8px}
 .alert{background:#c0392b;color:#fff;padding:10px 14px;border-radius:6px;font-weight:600}
@@ -43,7 +57,7 @@ margin:10px 0;text-decoration:none;color:inherit}
 <svg viewBox="0 0 840 260" style="width:100%;background:#fcfcfd;border:1px solid #e6e8eb;border-radius:8px"><text x="26" y="16" font-size="12"><tspan fill="#c0392b">● 模拟盘 -2.59%</tspan>  <tspan fill="#1f6feb">● 回测 -2.67%</tspan></text><line x1="26" y1="26.0" x2="814" y2="26.0" stroke="#ccc" stroke-dasharray="4 4"/><text x="816" y="30.0" font-size="10" fill="#999">100</text><polyline points="26.0,26.0 420.0,135.7 814.0,227.5" fill="none" stroke="#c0392b" stroke-width="2"/><polyline points="26.0,26.0 420.0,141.3 814.0,234.0" fill="none" stroke="#1f6feb" stroke-width="2"/></svg>
 <p class="ok">✓ 一致性检验通过（3 日）：模拟盘与同期回测日收益差 ≤7.2bp、累计偏差 ≤0.09%</p><p class="muted">该检验验证「实盘路径」与「回测路径」跑的是同一套信号代码——两者不一致即视为 bug。</p>
 <h2>次日交易指令</h2>
-<table class="dataframe tbl">
+<table class="dataframe tbl otbl">
   <thead>
     <tr style="text-align: right;">
       <th>代码</th>
@@ -98,7 +112,7 @@ margin:10px 0;text-decoration:none;color:inherit}
 事前公开、事后可验。份数与金额不公开。</p>
 <p>继续持有：510720, 512800, 513350</p>
 <h2>当前持仓</h2>
-<table class="dataframe tbl">
+<table class="dataframe tbl ptbl">
   <thead>
     <tr style="text-align: right;">
       <th>代码</th>
@@ -140,5 +154,5 @@ margin:10px 0;text-decoration:none;color:inherit}
     </tr>
   </tbody>
 </table>
-<h2>历史记录</h2><table class='tbl'><tr><th>日期</th><th>累计</th><th>当日</th><th>回撤</th><th>当日操作</th></tr><tr><td><a href="archive/2026-08-04.html">2026-08-04</a></td><td><span class="neg">-2.59%</span></td><td><span class="neg">-1.20%</span></td><td><span class="neg">-2.6%</span></td><td style='text-align:left'>卖513190 卖515300 买512010 买513050</td></tr><tr><td><a href="archive/2026-08-03.html">2026-08-03</a></td><td><span class="neg">-1.41%</span></td><td><span class="neg">-1.41%</span></td><td><span class="neg">-1.4%</span></td><td style='text-align:left'>卖588170 买515300</td></tr></table>
+<h2>历史记录</h2><table class='tbl htbl'><tr><th>日期</th><th>累计</th><th>当日</th><th>回撤</th><th>当日操作</th></tr><tr><td><a href="archive/2026-08-04.html">2026-08-04</a></td><td><span class="neg">-2.59%</span></td><td><span class="neg">-1.20%</span></td><td><span class="neg">-2.6%</span></td><td>卖513190 卖515300 买512010 买513050</td></tr><tr><td><a href="archive/2026-08-03.html">2026-08-03</a></td><td><span class="neg">-1.41%</span></td><td><span class="neg">-1.41%</span></td><td><span class="neg">-1.4%</span></td><td>卖588170 买515300</td></tr></table>
 <p class="muted">由 AutoTrade 自动生成 · 每交易日 19:05 更新 · 个人研究项目的自动化输出，<b>不构成任何投资建议</b>；所示为策略信号与模拟结果，据此操作风险自负。</p>

@@ -13,11 +13,25 @@ padding:10px 14px;font-size:13px;color:#31527d;margin:12px 0}
 border-radius:8px;padding:10px 12px}
 .kpi b{display:block;font-size:20px;margin-top:2px}
 .pos{color:#c0392b} .neg{color:#1e8449}
+/* 表格对齐：默认左对齐，数字列按表显式右对齐（表头与单元格成对设置，
+   避免出现表头右、内容左的错位） */
 .tbl{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
-.tbl td,.tbl th{border-bottom:1px solid #ececec;padding:6px 8px;text-align:right}
+.tbl td,.tbl th{border-bottom:1px solid #ececec;padding:6px 8px;text-align:left;
+white-space:nowrap}
 .tbl th{background:#f7f8fa;font-weight:600}
-.tbl td:first-child,.tbl th:first-child,.tbl td:nth-child(2),.tbl th:nth-child(2)
-{text-align:left}
+.tbl td:last-child{white-space:normal}
+/* 指令表：目标权重% / 限价 */
+.otbl td:nth-child(4),.otbl th:nth-child(4),
+.otbl td:nth-child(5),.otbl th:nth-child(5){text-align:right}
+/* 持仓表：权重% / 浮动盈亏% */
+.ptbl td:nth-child(3),.ptbl th:nth-child(3),
+.ptbl td:nth-child(4),.ptbl th:nth-child(4){text-align:right}
+/* 历史表：累计 / 当日 / 回撤 */
+.htbl td:nth-child(2),.htbl th:nth-child(2),
+.htbl td:nth-child(3),.htbl th:nth-child(3),
+.htbl td:nth-child(4),.htbl th:nth-child(4){text-align:right}
+/* 回测页数值表：首列为标签，其余全为数字 */
+.ntbl td:not(:first-child),.ntbl th:not(:first-child){text-align:right}
 h1{font-size:22px;margin:8px 0} h2{font-size:16px;margin:26px 0 6px;
 border-left:3px solid #1f6feb;padding-left:8px}
 .alert{background:#c0392b;color:#fff;padding:10px 14px;border-radius:6px;font-weight:600}
