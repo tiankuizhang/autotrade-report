@@ -30,6 +30,11 @@ white-space:nowrap}
 .htbl td:nth-child(2),.htbl th:nth-child(2),
 .htbl td:nth-child(3),.htbl th:nth-child(3),
 .htbl td:nth-child(4),.htbl th:nth-child(4){text-align:right}
+/* 清仓记录表：持有日数 / 买卖均价 / 净盈亏 */
+.rtbl td:nth-child(5),.rtbl th:nth-child(5),
+.rtbl td:nth-child(6),.rtbl th:nth-child(6),
+.rtbl td:nth-child(7),.rtbl th:nth-child(7),
+.rtbl td:nth-child(8),.rtbl th:nth-child(8){text-align:right}
 /* 回测页数值表：首列为标签，其余全为数字 */
 .ntbl td:not(:first-child),.ntbl th:not(:first-child){text-align:right}
 h1{font-size:22px;margin:8px 0} h2{font-size:16px;margin:26px 0 6px;
@@ -52,7 +57,7 @@ margin:10px 0;text-decoration:none;color:inherit}
   <div>持仓数<b>5</b></div>
   <div>运行天数<b>3</b></div>
 </div>
-
+<ul><li class="bad">数据陈旧：bars 最新 2026-08-04 &lt; 预期 2026-08-05</li></ul>
 <h2>净值走势（起点 = 100）</h2>
 <svg viewBox="0 0 840 260" style="width:100%;background:#fcfcfd;border:1px solid #e6e8eb;border-radius:8px"><text x="26" y="16" font-size="12"><tspan fill="#c0392b">● 模拟盘 -2.59%</tspan>  <tspan fill="#1f6feb">● 回测 -2.67%</tspan></text><line x1="26" y1="26.0" x2="814" y2="26.0" stroke="#ccc" stroke-dasharray="4 4"/><text x="816" y="30.0" font-size="10" fill="#999">100</text><polyline points="26.0,26.0 420.0,135.7 814.0,227.5" fill="none" stroke="#c0392b" stroke-width="2"/><polyline points="26.0,26.0 420.0,141.3 814.0,234.0" fill="none" stroke="#1f6feb" stroke-width="2"/></svg>
 <p class="ok">✓ 一致性检验通过（3 日）：模拟盘与同期回测日收益差 ≤7.2bp、累计偏差 ≤0.09%</p><p class="muted">该检验验证「实盘路径」与「回测路径」跑的是同一套信号代码——两者不一致即视为 bug。</p>
@@ -77,7 +82,7 @@ margin:10px 0;text-decoration:none;color:inherit}
       <td>0.0</td>
       <td>1.742</td>
       <td>rank 16 &gt; 10 exit</td>
-      <td></td>
+      <td>数据陈旧，默认建议观望</td>
     </tr>
     <tr>
       <td>515300</td>
@@ -86,7 +91,7 @@ margin:10px 0;text-decoration:none;color:inherit}
       <td>0.0</td>
       <td>1.286</td>
       <td>rank 12 &gt; 10 exit</td>
-      <td></td>
+      <td>数据陈旧，默认建议观望</td>
     </tr>
     <tr>
       <td>512010</td>
@@ -95,7 +100,7 @@ margin:10px 0;text-decoration:none;color:inherit}
       <td>20.0</td>
       <td>0.391</td>
       <td>rank 2 score +5.85% buy</td>
-      <td></td>
+      <td>数据陈旧，默认建议观望</td>
     </tr>
     <tr>
       <td>513050</td>
@@ -104,7 +109,7 @@ margin:10px 0;text-decoration:none;color:inherit}
       <td>20.0</td>
       <td>1.202</td>
       <td>rank 3 score +5.26% buy</td>
-      <td></td>
+      <td>数据陈旧，默认建议观望</td>
     </tr>
   </tbody>
 </table>
@@ -154,5 +159,45 @@ margin:10px 0;text-decoration:none;color:inherit}
     </tr>
   </tbody>
 </table>
+<h2>清仓记录</h2>
+<div class="kpi">
+  <div>已完成轮数<b>1</b></div>
+  <div>胜率<b>0%</b></div>
+  <div>盈亏比<b>—</b></div>
+  <div>平均持有<b>1.0 日</b></div>
+</div>
+<p class="muted">平均盈利 — ｜ 平均亏损 -6.18% ｜
+最佳 -6.18% ｜ 最差 -6.18%（持有为交易日数，盈亏含费用与分红）</p>
+<table class='tbl htbl' style='margin-top:10px'><tr><th>卖出原因</th><th>轮数</th><th>胜率</th><th>平均盈亏</th></tr><tr><td>score≤0 退出</td><td>1</td><td>0%</td><td><span class="neg">-6.18%</span></td></tr></table>
+<table class="dataframe tbl rtbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>代码</th>
+      <th>名称</th>
+      <th>建仓日</th>
+      <th>清仓日</th>
+      <th>持有(交易日)</th>
+      <th>买入均价</th>
+      <th>卖出均价</th>
+      <th>净盈亏</th>
+      <th>卖出原因</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>588170</td>
+      <td></td>
+      <td>2026-08-03</td>
+      <td>2026-08-04</td>
+      <td>1</td>
+      <td>0.8905</td>
+      <td>0.8355</td>
+      <td>-6.18%</td>
+      <td>score≤0 退出</td>
+    </tr>
+  </tbody>
+</table>
+<p class="muted">按持仓归零配对为一轮；盈亏为净额（含佣金、滑点与持有期分红），
+与净值曲线同口径。垫仓货币 ETF 不计入本表（其盈亏照常计入净值）。</p>
 
 <p class="muted">由 AutoTrade 自动生成 · 每交易日 19:05 更新 · 个人研究项目的自动化输出，<b>不构成任何投资建议</b>；所示为策略信号与模拟结果，据此操作风险自负。</p>

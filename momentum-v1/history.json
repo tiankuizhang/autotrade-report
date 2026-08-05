@@ -1,13 +1,20 @@
 [
  {
-  "action": "卖588170 买515300",
+  "action": "—",
+  "date": "2026-07-31",
+  "day_return_pct": 0.0,
+  "drawdown_pct": 0.0,
+  "total_return_pct": 0.0
+ },
+ {
+  "action": "买588170 买512800 买513350 买513190 买510720",
   "date": "2026-08-03",
   "day_return_pct": -1.41,
   "drawdown_pct": -1.41,
   "total_return_pct": -1.41
  },
  {
-  "action": "卖513190 卖515300 买512010 买513050",
+  "action": "卖588170 买515300",
   "date": "2026-08-04",
   "day_return_pct": -1.2,
   "drawdown_pct": -2.59,
