@@ -19,5 +19,12 @@
   "day_return_pct": -1.2,
   "drawdown_pct": -2.59,
   "total_return_pct": -2.59
+ },
+ {
+  "action": "卖513190 卖515300 买512010 买513050",
+  "date": "2026-08-05",
+  "day_return_pct": -0.52,
+  "drawdown_pct": -3.1,
+  "total_return_pct": -3.1
  }
 ]
