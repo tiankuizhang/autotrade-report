@@ -61,5 +61,12 @@
   "day_return_pct": -0.53,
   "drawdown_pct": -2.97,
   "total_return_pct": -2.97
+ },
+ {
+  "action": "—",
+  "date": "2026-08-13",
+  "day_return_pct": 0.93,
+  "drawdown_pct": -2.07,
+  "total_return_pct": -2.07
  }
 ]
