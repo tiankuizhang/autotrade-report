@@ -250,5 +250,33 @@
   "day_return_pct": -0.16,
   "drawdown_pct": -8.59,
   "total_return_pct": -8.11
+ },
+ {
+  "action": "—",
+  "date": "2026-09-21",
+  "day_return_pct": 3.1,
+  "drawdown_pct": -5.75,
+  "total_return_pct": -5.26
+ },
+ {
+  "action": "—",
+  "date": "2026-09-22",
+  "day_return_pct": -1.02,
+  "drawdown_pct": -6.71,
+  "total_return_pct": -6.23
+ },
+ {
+  "action": "—",
+  "date": "2026-09-23",
+  "day_return_pct": -0.95,
+  "drawdown_pct": -7.6,
+  "total_return_pct": -7.12
+ },
+ {
+  "action": "—",
+  "date": "2026-09-24",
+  "day_return_pct": -0.87,
+  "drawdown_pct": -8.41,
+  "total_return_pct": -7.93
  }
 ]
